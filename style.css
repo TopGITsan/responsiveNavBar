@@ -37,8 +37,8 @@ main {
 
 /* the nav bar */
 .navbar {
-  width: 5rem; /* the same size as the margin of the main */
-  height: 100vh; /* always fill 100% of the height */
+  /* width: 5rem; the same size as the margin of the main */
+  /* height: 100vh; always fill 100% of the height */
   position: fixed; /* stays in the same place no mather where the user scrolls on the page */
   background-color: var(--bg-primary);
   transition: width 200ms ease; /* add animation to the nav bar */
@@ -91,14 +91,15 @@ main {
   transition: background-color var(--transition-speed);
 }
 
-/* animate from the left when its hoverd over */
+/* animate from the left when its hoverd over
 .navbar:hover {
   width: 16rem;
-}
-/* display the text when the navbar is hovered */
+} */
+
+/* display the text when the navbar is hovered
 .navbar:hover .link-text {
   display: block;
-}
+} */
 
 /* transition the colors of the img when hovered */
 .nav-link img:hover {
@@ -125,4 +126,46 @@ main {
 }
 .navbar:hover .logo img {
   transform: rotate(-540deg); /* -180deg */
+}
+
+/* small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0; /* place the nav at the bottom*/
+    width: 100vw; /* invert the width end height values*/
+    height: 5rem;
+  }
+
+  .logo {
+    display: none; /* remove the logo, it takes up too much space */
+  }
+
+  .navbar-nav {
+    flex-direction: row; /* set the flex direction to row */
+  }
+  .nav-link{
+    justify-content: center; /* center the icons along the main axis */
+  }
+
+  main {
+    margin: 0;
+    padding-bottom: 5rem;
+  }
+}
+
+/* large screens */
+@media only screen and (min-width: 600px) {
+  .navbar{
+    top:0;
+    width: 5rem;
+    height: 100vh;
+  }
+  .navbar:hover {
+    width: 16rem;
+  }
+
+  /* display the text when the navbar is hovered */
+  .navbar:hover .link-text {
+    display: block;
+  }
 }
