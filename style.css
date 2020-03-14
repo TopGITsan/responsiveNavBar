@@ -13,3 +13,22 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* customize the scroll bar */
+/* target a pseudo element on the element with the scroll bar */
+body::-webkit-scrollbar { 
+  width: 0.25rem;
+}
+/* change the background of the track */
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+/* change the background of the thumb */
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+/* the main area */
+main {
+  margin-left: 5rem; /* a unit that is relative to the root element */
+}
